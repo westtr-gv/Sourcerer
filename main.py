@@ -17,7 +17,7 @@ playerImg = pygame.image.load('./sprites/adventurer-cast-00.png')
 playerX = 370
 playerY = 480
 
-
+# player function
 def player():
     screen.blit(playerImg,(100,100))
 
