@@ -36,20 +36,26 @@ def main():
     my_group = pygame.sprite.Group(player)
     clock = pygame.time.Clock()
 
-    while True:
+    running = True
+    while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                running = False
                 pygame.quit()
-                quit()
 
         # handle any movement made by the user
         handle_keys(player)
 
+        # animate player
         my_group.update()
+
         screen.fill(BACKGROUND_COLOR)
-        my_group.draw(screen)
+
+        player.draw(screen)
+
         pygame.display.update()
-        clock.tick(10)
+
+        clock.tick(FPS)
 
 
 if __name__ == '__main__':

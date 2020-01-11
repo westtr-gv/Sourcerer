@@ -28,6 +28,9 @@ class Player(pygame.sprite.Sprite):
         # creating a rect at position x,y (5,5) of size (150,198) which is the size of sprite
         self.rect = pygame.Rect(self.x, self.y, 50, 37)
 
+    def draw(self, screen):
+        screen.blit(self.image, (self.x, self.y))
+
     def update(self):
         # when the update method is called, we will increment the index
         self.index += 1
@@ -41,17 +44,13 @@ class Player(pygame.sprite.Sprite):
         self.image = self.images[self.index]
 
     def move_right(self):
-        print('right')
         self.x += 10
 
     def move_left(self):
         self.x -= 10
-        print(self.x)
 
     def move_up(self):
-        self.y += 10
-        print(self.y)
+        self.y -= 10
 
     def move_down(self):
-        print('down')
-        self.y -= 10
+        self.y += 10
